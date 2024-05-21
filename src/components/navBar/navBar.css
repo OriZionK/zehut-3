@@ -1,0 +1,117 @@
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.nav {
+  background: linear-gradient(to right, #309273, #074f38);
+  border-bottom: 1px solid #ccc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  
+}
+
+.nav .container {
+  height: 80px;
+  padding: 6px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* Adjusted justify-content to space between */
+}
+
+.nav .logo {
+  display: flex;
+  align-items: center;
+  margin-right: auto; /* Make the logo stick to the left */
+
+}
+
+.nav .logo img {
+  height: 68px;
+  margin-right: 8px;
+}
+
+.nav .logo span {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.nav .menu {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+
+
+.nav .menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav .menu ul li {
+  margin-right: 20px;
+  margin-left: auto; 
+}
+
+.nav .menu ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+
+.nav .menu button:hover {
+  transform: translateY(-2px) rotate(2deg); 
+  background-color: #0aad7a; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+.nav .menu ul li a:hover,
+.nav .menu ul li a.active { 
+  color: #fff;
+  transform: scale(1.1) rotate(-2deg); 
+  background-color: #0aad7a; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .nav .menu {
+      display: none;
+  }
+
+  .nav .menu.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      padding: 10px 0;
+  }
+
+  .nav .menu.active ul {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .nav .menu.active ul li {
+      margin: 10px 0;
+  }
+
+  .nav .menu.active button {
+      display: none;
+  }
+}
